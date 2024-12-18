@@ -43,14 +43,23 @@ extension DirtyJSON {
         }
         
         func get() -> String {
+            if index >= array.count {
+                index = array.count - 1
+            }
             return array[index] // Notice: unsafe
         }
         
         func set(_ value: String) {
+            if index >= array.count {
+                index = array.count - 1
+            }
             array[index] = value // Notice: unsafe
         }
         
         func append(_ value: String) {
+            if index >= array.count {
+                index = array.count - 1
+            }
             array[index] = array[index] + value // Notice: unsafe
         }
         
